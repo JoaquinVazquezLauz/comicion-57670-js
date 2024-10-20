@@ -1,30 +1,17 @@
-let contraseña;
+const tripPrices = [2000, 1200, 1500, 3000];
 
-do{
-    contraseña = prompt("ingresa tu contraseña")
-}while(contraseña !== 'joakopapaz')
-    alert("correcto")
+const trip1 = parseInt(prompt("Nike air ($2000):")) || 0;
+const trip2 = parseInt(prompt("Nuke jaguar ($1200):")) || 0;
+const trip3 = parseInt(prompt("Nike femenino ($1500):")) || 0;
+const trip4 = parseInt(prompt("Nike Jordan Air Pro Super Ultra Mega Promedio  ($3000):")) || 0;
 
+const totalFinal = (trip1 * tripPrices[0]) +
+                   (trip2 * tripPrices[1]) +
+                   (trip3 * tripPrices[2]) +
+                   (trip4 * tripPrices[3]);
 
-
-    let edad = parseInt(prompt("ingresa tu edad nene"))
-
-    if(edad >= 18){
-        console.log("el pive puede entrar")
-    }
-    else{
-        console.log("el pive no entra")
-    }
+alert(`Total cost for your dive trips: $${totalFinal}`);
 
 
-
-    let nombre1 = prompt("ingresa tu nombre")
-let apellido = prompt("ingresa tu apellido")
-let edad2 = parseFloat(prompt("ingresa tu edad"))
-
-
-function datos(nombre1 = "juan", apellido = "vazquez" , edad2 = 20){
-    console.log("el nombre es " , nombre1 + apellido + edad2)
-}
-
-datos("el nombre es " , nombre1 , apellido + "y su edad es " + edad2)
+//no es mucho pero es travajo humilde. me gustaria| poner mas cosas en el sitio pero no puedo visualisar bien que me falta todavia
+// muchas gracias 
