@@ -1,17 +1,31 @@
-const tripPrices = [2000, 1200, 1500, 3000];
+// en esta constante cree los nombres y precios de los zapatos 
+const zapatos = [
+    { nombre: 'Nike panda', precio: 1250 },
+    { nombre: 'Jordans', precio: 3000 },
+    { nombre: 'Terreneitor', precio: 10000 },
+    { nombre: 'Zapato femenino', precio: 2500 }
+];
 
-const trip1 = parseInt(prompt("Nike air ($2000):")) || 0;
-const trip2 = parseInt(prompt("Nuke jaguar ($1200):")) || 0;
-const trip3 = parseInt(prompt("Nike femenino ($1500):")) || 0;
-const trip4 = parseInt(prompt("Nike Jordan Air Pro Super Ultra Mega Promedio  ($3000):")) || 0;
+// Esta función para calcular el total de los zapatos seleccionados
+function calcularTotal(productos) {
+    let total = 0;
 
-const totalFinal = (trip1 * tripPrices[0]) +
-                   (trip2 * tripPrices[1]) +
-                   (trip3 * tripPrices[2]) +
-                   (trip4 * tripPrices[3]);
+    for (let i = 0; i < productos.length; i++) {
+        const producto = productos[i];
+        const cantidad = prompt(`¿Cuántos ${producto.nombre} deseas comprar?`);
 
-alert(`Total cost for your dive trips: $${totalFinal}`);
+        // Validación de entrada
+        if (!isNaN(cantidad) && cantidad > 0) {
+            total += producto.precio * cantidad;
+        } else {
+            console.log("Por favor, ingresa un número positivo válido.");
+        }
+    }
 
+    return total;
+}
 
-//no es mucho pero es travajo humilde. me gustaria| poner mas cosas en el sitio pero no puedo visualisar bien que me falta todavia
-// muchas gracias 
+// Aqui se calcula el total y lo muestra
+const totalCompra = calcularTotal(zapatos);
+console.log(`El total de tu compra es: $${totalCompra}`);
+
